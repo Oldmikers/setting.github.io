@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Google Calender</title>
+<style>
+body {
+background-image: url("https://media.istockphoto.com/id/1359090444/photo/milky-way-galaxy-with-stars-and-space-background-universe.webp?b=1&s=170667a&w=0&k=20&c=NalYcXfOAYHcUIxGN9RaGpwad6GD92T9QSnJZKo0ycI=");
+background-size: cover;
+background-position: center;
+color: rgba(255, 255, 255, 0.9); /* Slightly transparent white text for contrast */
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle drop shadow */
+}
+
+h1 {
+color: #ff0000; /* Adjust heading color to stand out */
+}
+
+.red-button {
+border: 1px linear-gradient(to bottom, #d00000, #a00000); /* Gradient border */
+background-color: rgba(255, 0, 0, 0.4); /* Slightly transparent buttons */
+border: none; /* Cleaner look without border */
+color: white;
+box-shadow: 0 0 3px rgba(255, 0, 0, 0.2); /* Individual button drop shadow */
+}
+
+.red-button:hover {
+opacity: 0.9; /* Slightly brighter on hover */
+transform: scale(1.05); /* Subtle zoom effect */
+}
+
+.red-button:hover {
+box-shadow: 0 0 5px rgba(255, 0, 0, 0.3); /* Increased drop shadow on hover */
+}
+
+.img-responsive {
+display: block;
+width: 100%;
+height: auto;
+}
+
+@media (max-width: 768px) {
+.red-button {
+padding: 5px 10px; /* Adjust padding for smaller screens */
+}
+}
+</style>
+
+<script src="https://cdn.animejs.com/lib/anime.min.js"></script>
+
+<script>
+anime.timeline({
+ duration: 0.3 // Duration of the animation
+}).add({
+ targets: '.red-button:hover', // Apply the styles to all red button elements on hover
+ opacity: [0.9, 1], // Fade in the button
+ scale: [1.05, 1] // Slightly zoom in the button
+}).play();
+</script>
+</head>
+
+<body>
+<h1>Beta Redirect Tool</h1>
+
+<input type="text" id="urlInput" placeholder="Enter URL">
+<button onclick="redirect()">Go</button>
+
+<br><br>
+
+<button class="red-button" onclick="redirectTo('https://oldmikers.github.io/')">Home</button>
+
+</button>
+
+<script>
+function redirect() {
+var url = document.getElementById("urlInput").value;
+if (url) {
+window.location.href = url;
+}
+}
+
+function redirectTo(url) {
+window.location.href = url;
+}
+
+const settingsButton = document.querySelector('.settings-button');
+
+settingsButton.addEventListener('click', () => {
+  // Add your desired functionality here
+  alert('Settings button clicked!');
+});
+</script>
+</body>
+</html>
