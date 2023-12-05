@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirect Tool</title>
-
+    <title>Google Calendar</title>
     <style>
         body {
             background-image: url("https://media.istockphoto.com/id/1359090444/photo/milky-way-galaxy-with-stars-and-space-background-universe.webp?b=1&s=170667a&w=0&k=20&c=NalYcXfOAYHcUIxGN9RaGpwad6GD92T9QSnJZKo0ycI=");
@@ -20,22 +19,33 @@
             color: #ff0000;
         }
 
+        .settings-button {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background-color: #000000; /* Black background */
+            color: #ffffff; /* White text */
+            border: 2px solid #ffffff; /* White border */
+        }
+
+        .settings-button:hover {
+            background-color: #333333; /* Darker black on hover */
+        }
+
         .red-button {
-            border: 1px solid linear-gradient(to bottom, #d00000, #a00000);
-            background-color: rgba(255, 0, 0, 0.4);
-            border: none;
+            background-color: rgba(255, 0, 0, 0.5);
+            border: 2px solid #d00000;
             color: white;
             padding: 4px 8px;
-            font-size: 12px;
+            font-size: 10px;
             cursor: pointer;
-            box-shadow: 0 0 3px rgba(255, 0, 0, 0.2);
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         .red-button:hover {
-            opacity: 0.9;
-            transform: scale(1.05);
-            box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+            background-color: rgba(208, 0, 0, 0.7);
+            border-color: #a00000;
+            color: #ffffff;
         }
 
         .img-responsive {
@@ -44,16 +54,19 @@
             height: auto;
         }
 
+        .input-container {
+            margin-bottom: 20px;
+        }
+
         @media (max-width: 768px) {
             .red-button {
                 padding: 3px 6px;
-                font-size: 10px;
+                font-size: 9px;
             }
         }
     </style>
 
     <script src="https://cdn.animejs.com/lib/anime.min.js"></script>
-
     <script>
         anime.timeline({
             duration: 0.3
@@ -88,13 +101,22 @@
 <body>
     <h1>Beta Redirect Tool</h1>
 
-    <input type="text" id="urlInput" placeholder="Enter URL">
-    <button class="red-button" onclick="redirect()">Go</button>
+    <div class="input-container">
+        <input type="text" id="urlInput" placeholder="Enter URL">
+        <button class="red-button" onclick="redirect()">Go</button>
+    </div>
 
     <br><br>
 
+    <div class="button-container">
     <button class="red-button" onclick="redirectTo('https://oldmikers.github.io/')">Home</button>
     <button class="red-button" onclick="redirectTo('https://oldmikers.github.io/darkmode.github.io/')">Dark Mode</button>
+
+    </div>
+
+    <button class="settings-button" onclick="redirectTo('https://oldmikers.github.io/setting.github.io/')">
+        <img src="settings-icon.png" alt="Settings Icon">
+    </button>
 </body>
 
 </html>
